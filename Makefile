@@ -16,11 +16,12 @@ all: $(NAME)
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-libft:
-	make bonus -C ./libft
+libft.a:
+	make -C ./libft
+	cp libft/libft.a libft.a
 
-$(NAME): libft $(OBJS) main.o
-	$(CC) $(CFLAGS) $(OBJS) main.o -o $(NAME) -lft -Llibft
+$(NAME): libft.a $(OBJS) main.o
+	$(CC) $(CFLAGS) $(OBJS) main.o -o $(NAME) -lft -L.
 
 clean:
 	make clean -C ./libft
@@ -33,9 +34,9 @@ fclean: clean
 
 re: fclean all
 
-bonus: all $(OBJS_BONUS) checker.o
-	make bonus -C ./libft
-	$(CC) $(CFLAGS) $(OBJS) $(OBJS_BONUS) checker.o -o checker -lft -Llibft
-	
+checker: libft.a ${OBJS} $(OBJS_BONUS) checker.o
+	$(CC) $(CFLAGS) $(OBJS) $(OBJS_BONUS) checker.o -o checker -lft -L.
 
-.PHONY: all clean fclean re bonus libft
+bonus: checker
+
+.PHONY: all clean fclean re bonus

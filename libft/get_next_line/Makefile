@@ -12,10 +12,10 @@ all: ${NAME}
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-$(NAME): ${OBJS}
-	make re -C ../ft
-	mv ../ft/libft.a $(NAME) 
-	ar -rcs ${NAME} ${OBJS}
+$(NAME): ${OBJS} ${BONUS_OBJS}
+	make -C ../ft
+	cp ../ft/libft.a $(NAME) 
+	ar -rcs ${NAME} ${BONUS_OBJS} ${OBJS}
 
 clean:
 	${RM} ${OBJS}
@@ -26,9 +26,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: ${OBJS} ${BONUS_OBJS}
-	make fclean bonus -C ../ft
-	mv ../ft/libft.a $(NAME)
-	ar -rcs ${NAME} ${BONUS_OBJS} ${OBJS}
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

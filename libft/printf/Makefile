@@ -14,10 +14,10 @@ all: $(NAME)
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-$(NAME): ${OBJS}
-	make re -C ../get_next_line
-	cp ../get_next_line/libnextline.a ${NAME}
-	ar -rcs ${NAME} ${OBJS}
+$(NAME): ${OBJS_BONUS}
+	make -C ../get_next_line
+	mv ../get_next_line/libnextline.a ${NAME}
+	ar -rcs ${NAME} ${OBJS_BONUS}
 
 clean:
 	${RM} ${OBJS}
@@ -28,9 +28,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: ${OBJS_BONUS}
-	make fclean bonus -C ../get_next_line
-	cp ../get_next_line/libnextline.a ${NAME}
-	ar -rcs ${NAME} ${OBJS_BONUS}
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

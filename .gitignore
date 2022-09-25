@@ -5,3 +5,4 @@ src/*.o
 ex
 push_swap
 push_swap_tester
+test

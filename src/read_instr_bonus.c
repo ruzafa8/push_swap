@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:23:39 by aruzafa-          #+#    #+#             */
-/*   Updated: 2022/09/24 16:20:51 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2022/09/25 13:30:52 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,12 @@ int	ch_read_instr(t_list **instr)
 	{
 		buf = ft_get_next_line(0);
 		if (!buf)
-			return (0);
+			return (1);
 		read = scan(buf);
 		free(buf);
 		if (read == ERROR_TOK)
-		{
-			if (ft_strncmp(buf, "\0", 1) == 0)
-				return (0);
-			return (1);
-		}
+			return (ft_strncmp(buf, "\0", 1) == 0);
 		insert_node(instr, read);
 	}
-	return (0);
+	return (1);
 }

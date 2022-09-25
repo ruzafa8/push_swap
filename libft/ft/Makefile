@@ -22,8 +22,8 @@ all: ${NAME}
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-$(NAME): ${OBJS}
-	ar -rcs ${NAME} ${OBJS}
+$(NAME): ${OBJS} ${BONUS_OBJS}
+	ar -rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:
 	${RM} ${OBJS}
@@ -34,7 +34,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: ${OBJS} ${BONUS_OBJS}
-	ar -rcs ${NAME} ${BONUS_OBJS} ${OBJS}
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
