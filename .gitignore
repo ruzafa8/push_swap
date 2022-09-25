@@ -4,5 +4,4 @@ checker
 src/*.o
 ex
 push_swap
-libft
 push_swap_tester
