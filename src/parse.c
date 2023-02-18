@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:12:42 by aruzafa-          #+#    #+#             */
-/*   Updated: 2022/09/24 18:01:46 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:25:37 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -38,6 +38,7 @@ int	*ps_parse(int *argc, char **argv)
 	char	**split;
 	int		*res;
 
+	(*argc)--;	
 	if (*argc == 0)
 		return (0);
 	if (!ps_is_number(argv[0]))
