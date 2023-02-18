@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:37:49 by aruzafa-          #+#    #+#             */
-/*   Updated: 2022/09/24 17:44:47 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:54:28 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_list		*ps_move_top_partition(t_stacks *stack, int partition_len);
 void		ps_add_instr(t_list **lst, t_instr instr);
 void		ps_print_instr(t_list *list);
 void		ps_add_part(t_list **lst, int part_size);
-void		ps_del_instr(t_list **lst);
+void		ps_del_instr(void *lst);
 
 int			*ps_lis(int *arr, int size, int *len, int i);
 t_list		*ps_lis_stack(t_stacks *stack, int *parsed_args, int argc);

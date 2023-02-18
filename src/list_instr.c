@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:20:11 by aruzafa-          #+#    #+#             */
-/*   Updated: 2022/09/18 17:46:59 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:54:46 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,9 @@ static void	print_instr(void *con)
 		ft_printf("rrr\n");
 }
 
-void	ps_del_instr(t_list **lst)
+void	ps_del_instr(void *lst)
 {
-	t_list	*node;
-
-	if (!*lst)
-		return ;
-	node = *lst;
-	*lst = (*lst)->next;
-	free(node->content);
-	free(node);
+	free(lst);
 }
 
 void	ps_print_instr(t_list *list)
