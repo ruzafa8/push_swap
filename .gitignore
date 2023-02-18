@@ -1,2 +1,4 @@
 *.a
 test/
+*.o
+push_swap
