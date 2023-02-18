@@ -31,6 +31,7 @@ clean:
 fclean: clean
 	make fclean -C ./libft
 	$(RM) $(NAME) checker
+	$(RM) libft.a
 
 re: fclean all
 
