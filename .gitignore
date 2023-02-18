@@ -2,3 +2,4 @@
 test/
 *.o
 push_swap
+*.dSYM
