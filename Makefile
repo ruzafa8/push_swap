@@ -40,4 +40,7 @@ checker: libft.a ${OBJS} $(OBJS_BONUS) checker.o
 
 bonus: checker
 
-.PHONY: all clean fclean re bonus
+check:
+	norminette ${SRCS} main.c
+
+.PHONY: all clean fclean re bonus check
