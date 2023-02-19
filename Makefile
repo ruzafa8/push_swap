@@ -43,4 +43,4 @@ bonus: checker
 check:
 	norminette ${SRCS} main.c
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus check
