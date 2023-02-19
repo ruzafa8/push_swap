@@ -4,3 +4,4 @@ test/
 push_swap
 *.dSYM
 *.swo
+*.swp

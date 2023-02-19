@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:14:00 by aruzafa-          #+#    #+#             */
-/*   Updated: 2023/02/18 20:49:12 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2023/02/19 13:28:22 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int	ordered(int *n, int len)
 	return (1);
 }
 
-int	free_all(t_list **instr_lst, t_stacks **stacks)
+int	free_all(t_list **instr_lst, t_stacks **stacks, int *parsed_args)
 {
 	ft_lstclear(instr_lst, ps_del_instr);
 	ps_delete_stack(stacks);
+	free(parsed_args);
 	return (0);
 }
 
@@ -64,6 +65,5 @@ int	main(int argc, char **argv)
 		}
 		ps_print_instr(instr_lst);
 	}
-	free(parsed_args);
-	return free_all(&instr_lst, &stacks);
+	return (free_all(&instr_lst, &stacks, parsed_args));
 }
