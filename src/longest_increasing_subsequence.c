@@ -6,7 +6,7 @@
 /*   By: aruzafa- <aruzafa-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:29:00 by aruzafa-          #+#    #+#             */
-/*   Updated: 2022/09/18 17:42:47 by aruzafa-         ###   ########.fr       */
+/*   Updated: 2023/02/19 13:22:17 by aruzafa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	*compute_res(int *arr, int *tail_idx, int *prev_idx, int len)
 		res[pos++] = arr[i];
 		i = prev_idx[i];
 	}
+	free(tail_idx);
+	free(prev_idx);
 	return (reverse(res, len));
 }
 
@@ -114,5 +116,6 @@ t_list	*ps_lis_stack(t_stacks *stack, int *parsed_args, int argc)
 			ps_add_instr(&instr, ps_push(stack, B));
 		i++;
 	}
+	free(lis);
 	return (instr);
 }
