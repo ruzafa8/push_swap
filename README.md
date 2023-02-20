@@ -19,6 +19,7 @@ Dos pilas A y B con las siguiente operaciones:
  - Rotate Reverse Both (RRR): Coloca el último elemento de la pila A y B al principio de cada una respectivamente
 
 ## Algoritmo
+
 ### 3 o menos elementos
 Miro cada caso uno a uno, ya que son pocos.
 ### 5 o menos elementos
