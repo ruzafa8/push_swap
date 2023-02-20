@@ -3,7 +3,7 @@ Algoritmo para el proyecto Push_swap de 42 Málaga.
 
 Este algoritmo consiste en ordenar una secuencia de números (no repetidos) que se introducen en la pila A.
 
-## Estructura
+## Estructura
 
 Dos pilas A y B con las siguiente operaciones:
  - Push A (PA): Coloca el primer elemento de la pila B en la pila A
@@ -19,8 +19,7 @@ Dos pilas A y B con las siguiente operaciones:
  - Rotate Reverse Both (RRR): Coloca el último elemento de la pila A y B al principio de cada una respectivamente
 
 ## Algoritmo
-
-### 3 o menos elementos
+### 3 o menos elementos
 Miro cada caso uno a uno, ya que son pocos.
 ### 5 o menos elementos
 Me llevo tantos elementos como pueda a B hasta que en A haya 3, aplico el algoritmo de 3, y luego inserto cada elemento de B en A colocándolo en su sitio correspondiente.
